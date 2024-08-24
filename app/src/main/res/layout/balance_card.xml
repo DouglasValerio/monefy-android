@@ -32,17 +32,13 @@
         app:layout_constraintTop_toBottomOf="@id/totalBalanceLabel"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Income and Expenses -->
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/incomeExpensesLayout"
         android:layout_width="0dp"
-
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/totalBalanceAmount"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/totalBalanceAmount">
 
         <!-- Income -->
@@ -50,28 +46,21 @@
             android:id="@+id/incomeContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:layout_marginEnd="32dp"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/incomeLabel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/income_arrow"
-                    android:maxWidth="12dp"/>
-                <TextView
-                    android:id="@+id/incomeLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Créditos"
-                    android:textColor="@android:color/white" />
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Créditos"
+                android:textColor="@android:color/white"
+                android:drawableStart="@drawable/income_arrow"
+                android:drawablePadding="2dp"
+                />
 
             <TextView
                 android:id="@+id/incomeAmount"
@@ -89,41 +78,35 @@
             android:id="@+id/expensesContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="0dp"
             android:orientation="vertical"
-            android:padding="8dp">
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/expense_arrow"
-        android:maxWidth="12dp"/>
-    <TextView
-        android:id="@+id/expensesLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Débitos"
-        android:textColor="@android:color/white" />
-</LinearLayout>
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
+                <TextView
+                    android:id="@+id/expensesLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Débitos"
+                    android:textColor="@android:color/white"
+                    android:drawableStart="@drawable/expense_arrow"
+                    android:drawablePadding="2dp"
 
+                    />
 
-               <TextView
-                   android:id="@+id/expensesAmount"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_gravity="center_horizontal"
-                   android:layout_marginTop="4dp"
-                   android:text="$284.00"
-                   android:textColor="@android:color/white"
-                   android:textStyle="bold" />
-
+            <TextView
+                android:id="@+id/expensesAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:text="$284.00"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
         </LinearLayout>
-    </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
