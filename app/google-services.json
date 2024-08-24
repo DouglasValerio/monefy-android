@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "860289073039",
+    "project_id": "meus-gastos-8f3e8",
+    "storage_bucket": "meus-gastos-8f3e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860289073039:android:4d554e6cecd9a0244e15fa",
+        "android_client_info": {
+          "package_name": "info.codementor.meusgastos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3HSw5IJ6JH9RnXW7Zk0RrR_8e3i6RVGw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
