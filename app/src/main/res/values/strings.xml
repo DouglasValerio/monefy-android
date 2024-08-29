@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Meus Gastos</string>
+    <string name="delete_item">Delete item</string>
 </resources>
