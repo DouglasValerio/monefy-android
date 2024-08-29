@@ -12,43 +12,6 @@ class FinancialRecord(
     val createdAt: Instant,
     val updatedAt: Instant
 ) {
-
-    fun createExpense(
-        amount: Double,
-        description: String,
-        date: Instant,
-
-        ): FinancialRecord {
-        val currentDateTime = Instant.now()
-        return FinancialRecord(
-            0,
-            date,
-            description,
-            amount,
-            FinancialRecordType.EXPENSE,
-            currentDateTime,
-            currentDateTime
-        )
-    }
-
-    fun createIncome(
-        amount: Double,
-        description: String,
-        date: Instant,
-
-        ): FinancialRecord {
-        val currentDateTime = Instant.now()
-        return FinancialRecord(
-            0,
-            date,
-            description,
-            amount,
-            FinancialRecordType.INCOME,
-            currentDateTime,
-            currentDateTime
-        )
-    }
-
     fun update(
         amount: Double = this.amount,
         description: String = this.description,
@@ -80,6 +43,42 @@ class FinancialRecord(
         ): FinancialRecord {
             return FinancialRecord(
                 id, date, description, amount, type, createdAt, updatedAt
+            )
+        }
+
+        fun createExpense(
+            amount: Double,
+            description: String,
+            date: Instant,
+
+            ): FinancialRecord {
+            val currentDateTime = Instant.now()
+            return FinancialRecord(
+                0,
+                date,
+                description,
+                amount,
+                FinancialRecordType.EXPENSE,
+                currentDateTime,
+                currentDateTime
+            )
+        }
+
+        fun createIncome(
+            amount: Double,
+            description: String,
+            date: Instant,
+
+            ): FinancialRecord {
+            val currentDateTime = Instant.now()
+            return FinancialRecord(
+                0,
+                date,
+                description,
+                amount,
+                FinancialRecordType.INCOME,
+                currentDateTime,
+                currentDateTime
             )
         }
     }
