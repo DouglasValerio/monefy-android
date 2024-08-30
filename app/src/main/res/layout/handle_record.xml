@@ -13,11 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
     app:showAsAction="always" />
 
-    <!-- ScrollView to hold the rest of the content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,7 +31,6 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Spinner for TIPO -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -46,7 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="TIPO"
+                    android:text="@string/typeLabel"
                     android:textColor="@android:color/black" />
 
                 <Spinner
@@ -57,12 +53,11 @@
                    android:id="@+id/typeSpinner"
                     android:padding="12dp" />
 
-                <!-- EditText for VALOR -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="VALOR"
+                    android:text="@string/amountLabel"
 
                     android:textColor="@android:color/black" />
 
@@ -71,9 +66,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:background="@android:drawable/edit_text"
-                    android:hint="$ 48.00"
+                    android:hint="@string/amountHint"
                     android:inputType="numberDecimal"
                     android:id="@+id/amount"
+                    android:textColor="@android:color/black"
+                    android:autofillHints=""
                     android:padding="12dp" />
 
                 <!-- DatePicker for DATE -->
@@ -81,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="DATE"
+                    android:text="@string/date"
                     android:textColor="@android:color/black" />
 
                 <LinearLayout
@@ -95,30 +92,34 @@
 
                     <EditText
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="48dp"
                         android:layout_weight="1"
+                        android:inputType="datetime"
                         android:background="@android:color/transparent"
                         android:id="@+id/dateTextField"
                         android:clickable="false"
                         android:enabled="false"
+                        android:textColor="@android:color/black"
                         android:focusable="false"
-                        android:hint="Select Date" />
+                        android:autofillHints=""
+                        android:hint="@string/selectDateHint" />
 
                     <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/primary"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:layout_gravity="center_vertical"
                         android:id="@+id/calendar_field"
+                        android:contentDescription="@string/calendar"
                         android:background="@android:color/transparent"
-                        android:src="@android:drawable/ic_menu_today" />
+                        android:src="@drawable/calendar" />
                 </LinearLayout>
 
-                <!-- EditText for DESCRIÇÃO -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="DESCRIÇÃO"
+                    android:text="@string/description"
                     android:textColor="@android:color/black" />
 
                 <EditText
@@ -126,21 +127,23 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:background="@android:drawable/edit_text"
-                    android:hint=""
+                    android:hint="@string/recordDescriptionHint"
+                    android:autofillHints=""
                     android:id="@+id/description"
+                    android:textColor="@android:color/black"
                     android:inputType="text"
                     android:padding="12dp" />
 
-                <!-- Button for SALVAR -->
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+
                     android:backgroundTint="#4DB6AC"
                     android:id="@+id/btn_save"
                     android:elevation="2dp"
                     android:padding="12dp"
-                    android:text="SALVAR"
+                    android:text="@string/saveBtnLabel"
                     android:textColor="@android:color/white" />
 
             </LinearLayout>

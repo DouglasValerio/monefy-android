@@ -9,10 +9,12 @@ import android.widget.DatePicker
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.google.android.material.snackbar.Snackbar
 import info.codementor.meusgastos.database.DatabaseHandler
 import info.codementor.meusgastos.databinding.HandleRecordBinding
 import info.codementor.meusgastos.entity.FinancialRecord
 import info.codementor.meusgastos.entity.FinancialRecordType
+import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
 import java.time.ZonedDateTime
@@ -35,7 +37,6 @@ class HandleRecordActivity : AppCompatActivity() {
 
         banco = DatabaseHandler(this)
         handleEditMode()
-
         handleClickListeners()
 
         handleSpinner()
@@ -56,6 +57,13 @@ class HandleRecordActivity : AppCompatActivity() {
             val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
             val zonedDateTime =
                 ZonedDateTime.ofInstant(recordForEdition!!.date, ZoneId.systemDefault())
+            zonedDateTime.format(formatter)
+            binding.dateTextField.setText(zonedDateTime.format(formatter))
+        }
+        else{
+            val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+            val zonedDateTime =
+                ZonedDateTime.ofInstant(Instant.now(), ZoneId.systemDefault())
             zonedDateTime.format(formatter)
             binding.dateTextField.setText(zonedDateTime.format(formatter))
         }
@@ -85,7 +93,7 @@ class HandleRecordActivity : AppCompatActivity() {
 
         val options = arrayOf("Débito", "Crédito")
 
-        val adapter = ArrayAdapter(this, R.layout.simple_spinner_item, options)
+        val adapter = ArrayAdapter(this, info.codementor.meusgastos.R.layout.spinner_item_layout, options)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         spinner.adapter = adapter
@@ -121,6 +129,11 @@ class HandleRecordActivity : AppCompatActivity() {
         val description = binding.description.text.toString()
         val dateStr = binding.dateTextField.text.toString()
         val type = binding.typeSpinner.selectedItem.toString()
+        if (amount <= 0 || description.isEmpty() || dateStr.isEmpty()) {
+            Snackbar.make(binding.root, "Preencha todos os campos", Snackbar.LENGTH_SHORT).show()
+            return
+        }
+
         val enumType =
             if (type == "Débito") FinancialRecordType.EXPENSE else FinancialRecordType.INCOME
 

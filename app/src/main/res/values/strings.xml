@@ -1,4 +1,24 @@
 <resources>
     <string name="app_name">Meus Gastos</string>
     <string name="delete_item">Delete item</string>
+    <string name="edit_item">Editar item</string>
+    <string name="record_icon">ícone da operação</string>
+    <string name="app_logo_description">App logo</string>
+    <string name="hi">Olá.</string>
+    <string name="balanceLabel">Saldo</string>
+    <string name="incomeLabel">Créditos</string>
+    <string name="expensesLabel">Débitos</string>
+    <string name="addRecordLabel">Adicionar registro</string>
+    <string name="emptyStateImageDescription">Imagem de uma lista vazia</string>
+    <string name="emptyStateTitle">Que vazio</string>
+    <string name="emptyStateDescription">Comece a registrar suas movimentações financeiras agora mesmo</string>
+    <string name="typeLabel">Tipo</string>
+    <string name="amountLabel">Valor</string>
+    <string name="amountHint">R$00.00</string>
+    <string name="date">Data</string>
+    <string name="selectDateHint">Selecione a data</string>
+    <string name="description">Descrição</string>
+    <string name="saveBtnLabel">Salvar</string>
+    <string name="recordDescriptionHint">Dê um nome para esse registro</string>
+    <string name="calendar">Calendar</string>
 </resources>

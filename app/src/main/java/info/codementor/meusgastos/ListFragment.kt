@@ -46,6 +46,15 @@ class ListFragment : Fragment() {
             banco = DatabaseHandler(context)
         }
         var result = banco.findAll()
+        if (result.isEmpty()) {
+            val emptyState = binding.emptyStateLayout
+            emptyState.visibility = View.VISIBLE
+
+        } else {
+            val emptyState = binding.emptyStateLayout
+            emptyState.visibility = View.INVISIBLE
+
+        }
         val debts = result.filter { it.type == FinancialRecordType.EXPENSE }.sumOf { it.amount }
         val credits = result.filter { it.type == FinancialRecordType.INCOME }.sumOf { it.amount }
         val balance = credits - debts
@@ -83,6 +92,7 @@ class ListFragment : Fragment() {
         ArrayAdapter<FinancialRecord>(context, R.layout.activity_list_item, items) {
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+
             val view = convertView ?: LayoutInflater.from(context).inflate(
                 R.layout.activity_list_item, parent, false
             )
@@ -122,4 +132,6 @@ class ListFragment : Fragment() {
             return view
         }
     }
+
+
 }

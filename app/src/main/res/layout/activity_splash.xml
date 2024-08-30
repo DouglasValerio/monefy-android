@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/monefy"
-    android:contentDescription="App logo" />
+    android:contentDescription="@string/app_logo_description" />
 
     <!-- You can add a TextView for a message or slogan if needed -->
 </RelativeLayout>
