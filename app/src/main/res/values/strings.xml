@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Meus Gastos</string>
+    <string name="app_name">Monefy</string>
     <string name="delete_item">Delete item</string>
     <string name="edit_item">Editar item</string>
     <string name="record_icon">ícone da operação</string>
